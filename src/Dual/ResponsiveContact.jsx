@@ -8,8 +8,8 @@ const ResponsiveContact = () => {
 
   return (
     <div className="font-semibold text-white">
-      <div className=" fixed w-full z-50">
-        <div className="fixed z-50 bottom-0 w-full bg-black shadow-2xl p-[15px]">
+      <div className=" fixed w-full z-50 ">
+        <div className="fixed bottom-0 w-full bg-black shadow-2xl p-[15px]">
           <div className="flex justify-around items-center py-2">
 
             <a
@@ -33,7 +33,7 @@ const ResponsiveContact = () => {
               
             </a>
             <a
-              href="https://www.linkedin.com/in/ali-ahmed-rahii/"
+              href="https://www.linkedin.com/in/ali-ahmed-rahi/"
               className="flex flex-col items-center "
             >
               <FaLinkedin className="w-6 h-6" />

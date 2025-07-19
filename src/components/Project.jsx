@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Projects = () => {
+const Project = () => {
   const [data, SetData] = useState([]);
 
   useEffect(() => {
@@ -84,7 +84,7 @@ const Projects = () => {
                       href={project.LiveDemo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn w-full bg-black border text-white rounded-full hover:bg-yellow-500 hover:text-black"
+                      className="btn w-full bg-black border text-white rounded-full border-yellow-500 hover:bg-white hover:text-black"
                     >
                       Live Demo
                     </a>
@@ -99,4 +99,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Project;
