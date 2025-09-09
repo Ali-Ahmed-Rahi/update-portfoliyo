@@ -9,7 +9,7 @@ const ResponsiveContact = () => {
   return (
     <div className="font-semibold text-white">
       <div className=" fixed w-full z-50 ">
-        <div className="fixed bottom-0 w-full bg-black shadow-2xl p-[15px]">
+        <div className="fixed bottom-0 w-full bg-black shadow-2xl p-[15px] border-t border-yellow-500 rounded-t-lg">
           <div className="flex justify-around items-center py-2">
 
             <a

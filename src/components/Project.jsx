@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Project = () => {
   const [data, SetData] = useState([]);
@@ -20,7 +22,9 @@ const Project = () => {
   return (
     <div>
       <div className="space-y-5">
-        <h2 className="text-sm font-work text-yellow-500 space-x-4">Own Projects</h2>
+        <h2 className="text-sm font-work text-yellow-500 space-x-4">
+          Own Projects
+        </h2>
         <h2 className="uppercase font-playfair flex gap-[10px] text-2xl">
           Have <span>Some</span> Project's
         </h2>
@@ -30,7 +34,10 @@ const Project = () => {
         <div className="flex justify-center items-center">
           <div className="grid grid-cols-1 gap-8 mt-8">
             {data.slice(0, 2).map((project, index) => (
-              <div key={index} className="border rounded-t-lg md:rounded-l-full text-white flex flex-col md:flex-row">
+              <div
+                key={index}
+                className="border rounded-t-lg md:rounded-l-full text-white flex flex-col md:flex-row"
+              >
                 <figure>
                   <img
                     data-aos="zoom-in"
@@ -48,36 +55,39 @@ const Project = () => {
                     {project.title}
                   </h2>
 
-                  <ul className="space-y-4">
-                    {project.content.map((list, i) => {
-                      const titleMatch = list.match(/^(\*\*.*?\*\*)/);
-                      const titleOnly = titleMatch
-                        ? titleMatch[1].replace(/\*\*/g, "")
-                        : "";
-                      const fullText = list.replace(
-                        /\*\*(.*?)\*\*/g,
-                        "<strong class='font-bold'>$1</strong>"
-                      );
+                  <div className="flex">
+                    <ul className="space-y-4">
+                      {project.content.map((list, i) => {
+                        const titleMatch = list.match(/^(\*\*.*?\*\*)/);
+                        const titleOnly = titleMatch
+                          ? titleMatch[1].replace(/\*\*/g, "")
+                          : "";
+                        const fullText = list.replace(
+                          /\*\*(.*?)\*\*/g,
+                          "<strong class='font-bold'>$1</strong>"
+                        );
 
-                      return (
-                        <li key={i}>
-                          <div className="group transition-all duration-700 cursor-pointer">
-                            <div className=" text-lg font-roboto hover:text-yellow-500 hover:underline">
-                              {titleOnly}
+                        return (
+                          <li key={i}>
+                            <div className="group transition-all duration-700 cursor-pointer">
+                              <div className=" text-lg font-roboto hover:text-yellow-500 hover:underline">
+                                {titleOnly}
+                              </div>
+                              <div className="max-h-0 overflow-hidden transition-all duration-[900ms] ease-in-out  group-hover:max-h-[300px] group-hover:mt-2 ">
+                                <div
+                                  className="text-sm text-white opacity-0 group-hover:opacity-100 transition duration-500"
+                                  dangerouslySetInnerHTML={{ __html: fullText }}
+                                />
+                              </div>
                             </div>
-                            <div
-                              className="max-h-0 overflow-hidden transition-all duration-[900ms] ease-in-out  group-hover:max-h-[300px] group-hover:mt-2 "
-                            >
-                              <div
-                                className="text-sm text-white opacity-0 group-hover:opacity-100 transition duration-500"
-                                dangerouslySetInnerHTML={{ __html: fullText }}
-                              />
-                            </div>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                   <div className="hidden md:block">
+                     <p className="font-serif flex items-center gap-2 animate-pulse "> <FaArrowLeft /> Tap</p>
+                   </div>
+                  </div>
 
                   <div className="mt-5">
                     <a
@@ -93,6 +103,14 @@ const Project = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="flex justify-center">
+          <Link
+            to="/projects"
+            className="btn font-semibold bg-black border text-white rounded-full border-yellow-500 hover:bg-white hover:text-black mt-10 "
+          >
+            Show More
+          </Link>
         </div>
       </div>
     </div>

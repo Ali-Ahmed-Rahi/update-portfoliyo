@@ -30,13 +30,16 @@ const ResponsiveSb = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-black border gap-2 border-yellow-500 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-black border border-yellow-500 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             {menuItems.map((item, index) => (
               <li key={index}>
-                <a href={item.href} className="text-white hover:bg-yellow-500 hover:text-black rounded">
+                <Link
+                  to={item.href}
+                  className="text-yellow-500 hover:bg-yellow-500 hover:text-black rounded"
+                >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -44,7 +47,7 @@ const ResponsiveSb = () => {
       </div>
 
       <div className="navbar-center">
-        <Link to='/' className="btn btn-ghost text-xl text-yellow-500">Portfolio</Link>
+        <Link to="/" className="btn btn-ghost text-xl text-yellow-500">Portfolio</Link>
       </div>
 
       <div className="navbar-end">
