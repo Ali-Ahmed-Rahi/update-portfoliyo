@@ -1,12 +1,14 @@
 import { IoIosContact } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
+
 const Sidebar = () => {
   return (
     <div>
       <div className="md:flex md:flex-col h-screen hidden lg:block">
         <div className="flex items-center justify-center pt-12">
           <IoIosContact className="w-40 h-40 rounded-full text-white" />
+          {/* <Profile/> */}
         </div>
         <div className="text-center">
           <h2 className="text-2xl font-bold text-white font-playfair">
@@ -53,19 +55,7 @@ const Sidebar = () => {
                 }`
               }
             >
-              Skill
-            </NavLink>
-            <NavLink
-              to="/education"
-              className={({ isActive }) =>
-                `w-32 transition-all duration-200 ${
-                  isActive
-                    ? "text-yellow-500 underline underline-offset-4"
-                    : "hover:underline hover:text-base hover:text-white"
-                }`
-              }
-            >
-              Education
+              Skills
             </NavLink>
             <NavLink
               to="/projects"

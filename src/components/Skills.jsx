@@ -48,7 +48,7 @@ const Skills = () => {
   const displayedSkills = showAll ? skillList : skillList.slice(0, defaultCount);
 
   return (
-    <div className="p-4 md:p-8">
+    <div className="">
       <div className="space-y-2 text-center md:text-left">
         <h2 className="text-sm font-work text-yellow-500">What I Have</h2>
         <h2 className="uppercase font-playfair flex justify-center md:justify-start gap-2 text-2xl">

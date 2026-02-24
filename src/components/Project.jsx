@@ -32,16 +32,16 @@ const Project = () => {
 
       <div id="projects" className="mt-10">
         <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 gap-8 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             {data.slice(0, 2).map((project, index) => (
               <div
                 key={index}
-                className="border rounded-t-lg md:rounded-l-full text-white flex flex-col md:flex-row"
+                className="border border-white/30 rounded-lg text-white"
               >
                 <figure>
                   <img
                     data-aos="zoom-in"
-                    className="rounded-t-lg md:rounded-l-full  h-full w-screen object-cover  "
+                    className="rounded-t-lg h-full w-screen object-cover  "
                     src={project.image}
                     alt="Image"
                   />
