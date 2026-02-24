@@ -5,7 +5,7 @@ const Contact = () => {
         <h2 className="text-sm font-work text-yellow-500 space-x-4">Contact Me</h2>
         <h2 className="uppercase font-playfair flex gap-2 text-2xl">Open <span>to</span> Opportunities</h2>  
       </div>
-      <section className="py-6 text-white font-open border rounded-t-lg md:rounded-l-full mt-12">
+      <section className="py-6 text-white font-open border border-white/20 rounded-lg mt-12">
         <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
           <div className="py-6 md:py-0 md:px-6 flex items-center font-playfair">
           
