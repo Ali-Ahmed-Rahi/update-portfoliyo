@@ -18,7 +18,6 @@ const ResponsiveContact = () => {
             >
               <MdCall className="w-6 h-6" />
               
-              
             </a>
             <a 
             href="https://wa.me/+8801942432047"
