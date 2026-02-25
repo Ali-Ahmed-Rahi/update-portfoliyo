@@ -1,26 +1,24 @@
 import { IoIosContact } from "react-icons/io";
 import { NavLink } from "react-router-dom";
+import ProfileSelect from "../helpers/profileSelect";
 
 
 const Sidebar = () => {
+  
   return (
     <div>
       <div className="md:flex md:flex-col h-screen hidden lg:block">
         <div className="flex items-center justify-center pt-12">
-          <IoIosContact className="w-40 h-40 rounded-full text-white" />
-          {/* <Profile/> */}
+          <ProfileSelect/>
         </div>
-        <div className="text-center">
+        <div className="text-center pt-10">
           <h2 className="text-2xl font-bold text-white font-playfair">
             Ali Ahmed Rahi
           </h2>
           <p className="text-yellow-500 text-sm font-work">Web Developer</p>
         </div>
         <div className="pt-16 flex justify-center font-roboto">
-          <ul
-            tabIndex={0}
-            className="menu gap-6 text-center uppercase text-sm"
-          >
+          <ul tabIndex={0} className="menu gap-6 text-center uppercase text-sm">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -69,18 +67,6 @@ const Sidebar = () => {
             >
               Projects
             </NavLink>
-            {/* <NavLink
-              to="/services/#"
-              className={({ isActive }) =>
-                `w-32 transition-all duration-200 ${
-                  isActive
-                    ? "text-yellow-500 underline underline-offset-4"
-                    : "hover:underline hover:text-base hover:text-white"
-                }`
-              }
-            >
-              Services
-            </NavLink> */}
             <NavLink
               to="/contact"
               className={({ isActive }) =>
@@ -97,7 +83,7 @@ const Sidebar = () => {
         </div>
 
         {/* Footer at the Bottom */}
-        <footer className="footer footer-center text-white p-4 pt-56 font-work">
+        <footer className="footer footer-center text-white p-4 pt-72 font-work">
           <aside>
             <p>
               Copyright © {new Date().getFullYear()} - All rights reserved by{" "}
