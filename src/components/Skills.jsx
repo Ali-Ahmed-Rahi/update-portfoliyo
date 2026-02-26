@@ -1,83 +1,86 @@
-import { useEffect, useState } from "react";
-import { FaReact } from "react-icons/fa";
-import { GrGithub } from "react-icons/gr";
+import { SiHtml5, SiJavascript, SiTailwindcss, SiExpress, SiMongodb, SiVercel } from "react-icons/si";
 import { IoLogoCss3, IoLogoNodejs } from "react-icons/io";
+import { FaReact } from "react-icons/fa";
 import { RiFirebaseFill, RiNextjsFill } from "react-icons/ri";
-import {
-  SiExpress,
-  SiHtml5,
-  SiJavascript,
-  SiMongodb,
-  SiTailwindcss,
-  SiVercel,
-} from "react-icons/si";
+import { GrGithub } from "react-icons/gr";
 
 const skillList = [
-  { icon: <SiHtml5 className="text-4xl text-orange-500" />, name: "HTML" },
-  { icon: <IoLogoCss3 className="text-4xl text-blue-500" />, name: "CSS" },
-  { icon: <SiJavascript className="text-4xl text-yellow-400" />, name: "JavaScript" },
-  { icon: <FaReact className="text-4xl text-cyan-400" />, name: "React" },
-  { icon: <IoLogoNodejs className="text-4xl text-green-500" />, name: "Node Js" },
-  { icon: <SiExpress className="text-4xl text-white" />, name: "Express Js" },
-  { icon: <SiMongodb className="text-4xl text-green-500" />, name: "MongoDB" },
-  { icon: <RiFirebaseFill className="text-4xl text-yellow-400" />, name: "Firebase" },
-  { icon: <GrGithub className="text-4xl text-white" />, name: "Github" },
-  { icon: <SiVercel className="text-4xl text-white" />, name: "Vercel" },
-  { icon: <RiNextjsFill className="text-4xl text-white" />, name: "Next JS" },
-  { icon: <SiTailwindcss className="text-4xl text-cyan-500" />, name: "Tailwind" },
+  { icon: <SiHtml5 className="text-5xl text-orange-500" /> },
+  { icon: <IoLogoCss3 className="text-5xl text-blue-500" /> },
+  { icon: <SiJavascript className="text-5xl text-yellow-400" /> },
+  { icon: <FaReact className="text-5xl text-cyan-400" /> },
+  { icon: <IoLogoNodejs className="text-5xl text-green-500" /> },
+  { icon: <SiExpress className="text-5xl text-white" /> },
+  { icon: <SiMongodb className="text-5xl text-green-500" /> },
+  { icon: <RiFirebaseFill className="text-5xl text-yellow-400" /> },
+  { icon: <GrGithub className="text-5xl text-white" /> },
+  { icon: <SiVercel className="text-5xl text-white" /> },
+  { icon: <RiNextjsFill className="text-5xl text-white" /> },
+  { icon: <SiTailwindcss className="text-5xl text-cyan-500" /> },
 ];
 
 const Skills = () => {
-  const [showAll, setShowAll] = useState(false);
-  const [defaultCount, setDefaultCount] = useState(6); 
-
-  useEffect(() => {
-    const updateCount = () => {
-      if (window.innerWidth >= 1024) {
-        setDefaultCount(8);
-      } else {
-        setDefaultCount(6);
-      }
-    };
-
-    updateCount(); 
-    window.addEventListener("resize", updateCount); 
-    return () => window.removeEventListener("resize", updateCount);
-  }, []);
-
-  const displayedSkills = showAll ? skillList : skillList.slice(0, defaultCount);
-
   return (
-    <div className="">
-      <div className="space-y-2 text-center md:text-left">
-        <h2 className="text-sm font-work text-yellow-500">What I Have</h2>
-        <h2 className="uppercase font-playfair flex justify-center md:justify-start gap-2 text-2xl">
+    <div className="mt-8">
+      <div className="space-y-2 text-left">
+        <h2 className="text-md font-work text-yellow-500">What I Have</h2>
+        <h2 className="uppercase font-playfair flex justify-start gap-2 text-2xl">
           Areas <span>of</span> Expertise
         </h2>
       </div>
 
-      <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center">
-        {displayedSkills.map((skill, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-2 border rounded-lg w-full max-w-[160px] p-3 font-open font-bold"
-          >
-            {skill.icon}
-            <span>{skill.name}</span>
-          </div>
-        ))}
-      </div>
+      {/* Horizontal Scroll Carousel with Heartbeat Wave */}
+      <div className="relative overflow-hidden pt-16 h-44 hidden md:block">
+        {/* Gradient Edges */}
+        <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-      {skillList.length > defaultCount && (
-        <div className="mt-6 flex justify-center">
-          <button
-            onClick={() => setShowAll((prev) => !prev)}
-            className="px-6 py-2 border border-yellow-500 rounded-full  hover:bg-white hover:text-black text-white font-semibold  transition"
-          >
-            {showAll ? "Show Less" : "Show More"}
-          </button>
+        {/* Scrolling Logos */}
+        <div className="flex gap-6 whitespace-nowrap animate-[scroll_5s_linear_infinite]  p-10">
+          {[...skillList, ...skillList].map((skill, index) => {
+            // Create wave/heartbeat effect
+            const translateY = index % 2 === 0 ? "translate-y-0"
+                              : index % 2 === 1 ? "-translate-y-20"
+                              : index % 2 === 6 ? "-translate-y-0"
+                              : "-translate-y-3";
+
+            return (
+              <div
+                key={index}
+                className={`flex items-center justify-center gap-2 border rounded-full p-2 bg-black/30 transform transition duration-500 hover:scale-110 hover:shadow-xl ${translateY}`}
+              >
+                {skill.icon}
+              </div>
+            );
+          })}
         </div>
-      )}
+      </div>
+      <div className="relative overflow-hidden pt-5  h-40 md:hidden block">
+        {/* Gradient Edges */}
+        <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+
+        {/* Scrolling Logos */}
+        <div className="flex gap-6 whitespace-nowrap overflow-x-auto p-10 pt-11">
+          {[...skillList, ...skillList].map((skill, index) => {
+            // Create wave/heartbeat effect
+            const translateY = index % 2 === 0 ? "translate-y-0"
+                              : index % 2 === 1 ? "-translate-y-9"
+                              : index % 2 === 0 ? "-translate-y-0"
+                              : "-translate-y-3";
+
+            return (
+              <div
+                key={index}
+                className={`flex items-center justify-center gap-2 border rounded-full p-2 bg-black/30 transform transition duration-500 hover:scale-110 hover:shadow-xl ${translateY}`}
+              >
+                {skill.icon}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      
     </div>
   );
 };

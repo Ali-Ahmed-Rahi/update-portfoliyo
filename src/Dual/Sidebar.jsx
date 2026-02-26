@@ -15,7 +15,7 @@ const Sidebar = () => {
           <h2 className="text-2xl font-bold text-white font-playfair">
             Ali Ahmed Rahi
           </h2>
-          <p className="text-yellow-500 text-sm font-work">Web Developer</p>
+          <p className="text-yellow-500 text-[14px] font-work ">Full Stack Web Developer</p>
         </div>
         <div className="pt-16 flex justify-center font-roboto">
           <ul tabIndex={0} className="menu gap-6 text-center uppercase text-sm">

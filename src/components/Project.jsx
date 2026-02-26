@@ -22,7 +22,7 @@ const Project = () => {
   return (
     <div>
       <div className="space-y-5">
-        <h2 className="text-sm font-work text-yellow-500 space-x-4">
+        <h2 className="text-md font-work text-yellow-500 space-x-4">
           Own Projects
         </h2>
         <h2 className="uppercase font-playfair flex gap-[10px] text-2xl">
@@ -36,7 +36,7 @@ const Project = () => {
             {data.slice(0, 2).map((project, index) => (
               <div
                 key={index}
-                className="border border-white/30 rounded-lg text-white"
+                className="border border-white/30 rounded-lg text-white transform transition-transform duration-500 md:hover:scale-110 hover:shadow-2xl"
               >
                 <figure>
                   <img
@@ -64,7 +64,7 @@ const Project = () => {
                           : "";
                         const fullText = list.replace(
                           /\*\*(.*?)\*\*/g,
-                          "<strong class='font-bold'>$1</strong>"
+                          "<strong class='font-bold'>$1</strong>",
                         );
 
                         return (
@@ -84,9 +84,12 @@ const Project = () => {
                         );
                       })}
                     </ul>
-                   <div className="hidden md:block">
-                     <p className="font-serif flex items-center gap-2 animate-pulse "> <FaArrowLeft /> Tap</p>
-                   </div>
+                    <div className="hidden md:block">
+                      <p className="font-serif flex items-center gap-2 animate-pulse ">
+                        {" "}
+                        <FaArrowLeft /> Tap
+                      </p>
+                    </div>
                   </div>
 
                   <div className="mt-5">

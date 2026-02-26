@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <div className="max-w-7xl mx-auto md:flex shadow-[0_25px_50px_rgba(0,0,0,0.5)] ">
       {/* the sidebar for lg device */}
-      <div className=" bg-black md:h-screen md:fixed md:top-0 hidden md:block">
+      <div className=" bg-black md:h-screen md:fixed md:top-0 hidden md:block ">
         <Sidebar />
       </div>
       {/* the sidebar for sm device */}
