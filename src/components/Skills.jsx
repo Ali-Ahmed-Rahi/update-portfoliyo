@@ -1,4 +1,11 @@
-import { SiHtml5, SiJavascript, SiTailwindcss, SiExpress, SiMongodb, SiVercel } from "react-icons/si";
+import {
+  SiHtml5,
+  SiJavascript,
+  SiTailwindcss,
+  SiExpress,
+  SiMongodb,
+  SiVercel,
+} from "react-icons/si";
 import { IoLogoCss3, IoLogoNodejs } from "react-icons/io";
 import { FaReact } from "react-icons/fa";
 import { RiFirebaseFill, RiNextjsFill } from "react-icons/ri";
@@ -30,57 +37,33 @@ const Skills = () => {
       </div>
 
       {/* Horizontal Scroll Carousel with Heartbeat Wave */}
-      <div className="relative overflow-hidden pt-16 h-44 hidden md:block">
+      <div className="relative overflow-hidden pt-16 h-44 ">
         {/* Gradient Edges */}
-        <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+        <div className="hidden md:block absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+        <div className="hidden md:block absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-        {/* Scrolling Logos */}
-        <div className="flex gap-6 whitespace-nowrap animate-[scroll_5s_linear_infinite]  p-10">
-          {[...skillList, ...skillList].map((skill, index) => {
-            // Create wave/heartbeat effect
-            const translateY = index % 2 === 0 ? "translate-y-0"
-                              : index % 2 === 1 ? "-translate-y-20"
-                              : index % 2 === 6 ? "-translate-y-0"
-                              : "-translate-y-3";
+        <div className="overflow-hidden w-full">
+          <div className="flex w-max gap-6 animate-scroll p-10">
+            {[...skillList, ...skillList].map((skill, index) => {
+              const translateY =
+                index % 2 === 0
+                  ? "translate-y-0"
+                  : "-translate-y-6 sm:-translate-y-12";
 
-            return (
-              <div
-                key={index}
-                className={`flex items-center justify-center gap-2 border rounded-full p-2 bg-black/30 transform transition duration-500 hover:scale-110 hover:shadow-xl ${translateY}`}
-              >
-                {skill.icon}
-              </div>
-            );
-          })}
+              return (
+                <div
+                  key={index}
+                  className={`flex items-center justify-center border rounded-full p-2 bg-black/30
+                        transform transition duration-500 hover:scale-110 hover:shadow-xl
+                        ${translateY}`}
+                >
+                  {skill.icon}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-      <div className="relative overflow-hidden pt-5  h-40 md:hidden block">
-        {/* Gradient Edges */}
-        <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
-
-        {/* Scrolling Logos */}
-        <div className="flex gap-6 whitespace-nowrap overflow-x-auto p-10 pt-11">
-          {[...skillList, ...skillList].map((skill, index) => {
-            // Create wave/heartbeat effect
-            const translateY = index % 2 === 0 ? "translate-y-0"
-                              : index % 2 === 1 ? "-translate-y-9"
-                              : index % 2 === 0 ? "-translate-y-0"
-                              : "-translate-y-3";
-
-            return (
-              <div
-                key={index}
-                className={`flex items-center justify-center gap-2 border rounded-full p-2 bg-black/30 transform transition duration-500 hover:scale-110 hover:shadow-xl ${translateY}`}
-              >
-                {skill.icon}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      
     </div>
   );
 };
