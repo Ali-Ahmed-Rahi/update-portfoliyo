@@ -2,21 +2,32 @@ import AboutMe from "../components/AboutMe";
 import Banner from "../components/Banner";
 import Contact from "../components/Contact";
 import Projec from "../components/projec";
-import Projects from "../components/Project";
 import Skills from "../components/Skills";
-
-
 
 const HomeBar = () => {
   return (
-    <div className=" space-y-28 "> 
-      <Banner></Banner>
-      <AboutMe></AboutMe>
-      <Skills></Skills>
-      {/* <Projects></Projects> */}
-      <Projec></Projec>
-      <Contact></Contact>
-      
+    <div className="space-y-28">
+
+      <section id="home">
+        <Banner />
+      </section>
+
+      <section id="about">
+        <AboutMe />
+      </section>
+
+      <section id="skills">
+        <Skills />
+      </section>
+
+      <section id="projects">
+        <Projec />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+
     </div>
   );
 };

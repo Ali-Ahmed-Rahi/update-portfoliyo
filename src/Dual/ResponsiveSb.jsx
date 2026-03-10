@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const ResponsiveSb = () => {
   const menuItems = [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Projects", href: "/projects" },
-    { label: "Contact", href: "/contact" },
+    { label: "About", href: "/#about" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -30,13 +30,13 @@ const ResponsiveSb = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-black border border-yellow-500 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-black border border-yellow-500 rounded-box z-[1] mt-3 w-[250px] p-2 shadow gap-4"
           >
             {menuItems.map((item, index) => (
               <li key={index}>
                 <Link
                   to={item.href}
-                  className="text-yellow-500 hover:bg-yellow-500 hover:text-black rounded"
+                  className="text-yellow-500 hover:bg-yellow-500 rounded text-lg "
                 >
                   {item.label}
                 </Link>
